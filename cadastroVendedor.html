@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tela de Cadastro do vendedor</title>
+	<!-- Adicionando o CSS do Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<link href="css/formcadastro.css" rel="stylesheet" />
+</head>
+<body>
+	
+	<div class="card">
+
+		<div class="card-header">
+			<h5 class="mb-0">
+				Crie seu cadastro como vendedor
+			</h5>
+		</div>
+		<span id="msg"></span>
+		<div class="card-body">
+			<form action= "" class="container-fluid" id ="userForm" method="POST">
+				<div class="form-row">
+					<div class="col-12">
+						<div class="form-group">
+							<label for="nome">Nome Completo *</label>
+							<input type="text" class="form-control input-name inputs required" id="input-name" placeholder="Lu Ji" oninput="fullNameValidate()" >
+							<span class="span-required">O Nome Completo deve conter duas ou mais palavras, cada uma com pelo menos 2 caracteres, sem números ou caracteres especiais.</span>
+						</div>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="col-12">
+						<div class="form-group">
+							<label for="cnpj">CNPJ *</label>
+							<input type="text" class="form-control input-cpf inputs required" id="input-cnpj" placeholder="62.173.620/0001-80" oninput = "documentValidate()" >
+							<span class="span-required">Digite seu CNPJ válido com 14 digitos</span>
+						</div>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="col-12">
+						<div class="form-group">
+							<label for="endereco">Endereço *</label>
+							<input type="text" class="form-control inputs required" id="endereco" placeholder="Rua principal, 123" oninput= "addressValidate()" >
+							<span class="span-required">Necessário preencher seu endereço</span>
+						</div>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="col-12">
+						<div class="form-group">
+							<label for="cep">CEP *</label>
+							<input type="text" class="form-control inputs required" id="cep" placeholder="98786543" oninput="zipCodeValidade()">
+							<span class="span-required">Digite seu CEP válido com 8 digitos</span>
+						</div>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="col-12">
+						<div class="form-group">
+							<label for="cidade">Cidade *</label>
+							<input type="text" class="form-control inputs required" id="cidade" placeholder="Rio de Janeiro" oninput="cityValidate()">
+							<span class="span-required">Necessário preecher sua cidade corretamente sem carateres especiais e números</span>
+						</div>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="col-12">
+						<div class="form-group">
+							<label for="complemento">Complemento </label>
+							<input type="text" class="form-control" id="complemento" placeholder="Informe o complemento">
+						</div>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="col-12">
+						<div class="form-group">
+							<label for="referencia">Ponto de referência </label>
+							<input type="text" class="form-control" id="referencia" placeholder="Informe o ponto de referência">
+						</div>
+					</div>
+				</div>
+				
+				<div class="form-row">
+					<div class="col-12">
+						<div class="form-group">
+							<label for="email">Email *</label>
+							<input type="email" class="form-control inputs required" id="email" placeholder="maria@gmail.com" oninput="emailValidate()">
+							<span class="span-required">Necessário informar um email válido</span>
+						</div>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="col-12">
+						<div class="form-group">
+							<label for="senha">Senha *</label>
+							<input type="text" class="form-control inputs required" id="senha" placeholder="Anamaria123@" oninput="passwordValidate()">
+							<span class="span-required">Necessário preecher sua senha com  8 caracteres, pelo menos uma letra maiúscula, um número e um símbolo. </span>
+						</div>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="col-12">
+						<div class="form-group">
+							<label for="phone">Telefone *</label>
+							<input type="text" class="form-control inputs required" id="phone" placeholder="41876562030" oninput="phoneValidate()">
+							<span class="span-required">Digite seu telefone válido com 11 digitos</span>
+						</div>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="col-12">
+						<div class="form-group">
+							<label for="pergunta">Pergunta *</label> 
+				<select name="pergunta" id="pergunta" required>
+					<option value="instrumento">Que instrumento você mais gosta?</option>
+					<option value="prato">Qual é seu prato favorito?</option>
+					<option value="livro">Qual é o nome do seu primeiro livro que você leu?</option>
+					<option value="cor">Qual é a sua cor favorita?</option>
+					<option value="esporte">Qual é seu esporte favorito?</option>
+				</select>
+							<input type="text" class="form-control inputs required" id="resposta_pergunta" placeholder="Piano" oninput="answerValidate()">
+							<span class="span-required">Necessário preencher sua resposta</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-row hidden">
+					<div class="col-12">
+						<div class="form-group">
+							<label for="phone">Perfil </label>
+							<input type="text" class="form-control inputs " id="perfil" placeholder="" value="VENDEDOR">
+							
+						</div>
+					</div>
+				</div>
+
+				<div class="col-12">
+					<button class="btn btn-primary" type="submit" name="form-card-user">Cadastre-se</button>
+				</div> 
+			</form>
+		</div>
+	</div>
+	<script src="js/cadastroVendedor.js"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trocar Senha</title>
+    <link href="css/formcadastro.css" rel="stylesheet" />
+</head>
+<body>
+	<div class="card">
+		<div class="card-header">
+			<h3 class="mb-0">
+				Recuperar sua senha esquecida
+			</h5>
+		</div>
+		<span id="msg"></span>
+		<div class="card-body">
+			<form action= "" class="container-fluid" id ="recupararForm" method="POST">
+				
+				<div class="form-row">
+					<div class="col-12">
+						<div class="form-group">
+							<label for="cpf">CPF *</label>
+							<input type="text" class="form-control input-cpf inputs required" id="input-cpf" placeholder="23456734568" ><br>
+							<span class="span-required">Digite seu CPF válido com 11 digitos</span>
+						</div>
+					</div>
+				</div><br><br>
+				
+				
+				<div class="form-row">
+					<div class="col-12">
+						<div class="form-group">
+							<label for="email">Email *</label>
+							<input type="email" class="form-control inputs required" id="email" placeholder="maria@gmail.com"><br>
+							<span class="span-required">Necessário informar um email válido</span>
+						</div>
+					</div>
+				</div><br><br>
+				
+				
+				<div class="form-row">
+					<div class="col-12">
+						<div class="form-group">
+							<label for="pergunta">Pergunta *</label> 
+				<select name="pergunta" id="pergunta" required>
+					<option value="instrumento">Que instrumento você mais gosta?</option>
+					<option value="prato">Qual é seu prato favorito?</option>
+					<option value="livro">Qual é o nome do seu primeiro livro que você leu?</option>
+					<option value="cor">Qual é a sua cor favorita?</option>
+					<option value="esporte">Qual é seu esporte favorito?</option>
+				</select><br><br>
+							<input type="text" class="form-control inputs required" id="resposta" placeholder="Piano"><br>
+							<span class="span-required">Necessário preencher sua resposta</span>
+						</div>
+					</div>
+				</div><br>
+
+                
+
+				<div class="col-12">
+					<button class="btn btn-primary" type="submit" name="form-card-user">Salvar</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	<script src="js/cadastroUser.js"></script>
+</body>
+</html>
