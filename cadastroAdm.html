@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Tela de Cadastro</title>
+	<title>Tela de Cadastro do administrador</title>
 	<!-- Adicionando o CSS do Bootstrap -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	<link href="css/formcadastro.css" rel="stylesheet" />
@@ -12,7 +12,7 @@
 
 		<div class="card-header">
 			<h5 class="mb-0">
-				Crie seu cadastro 
+				Crie seu cadastro como administrador
 			</h5>
 		</div>
 		<span id="msg"></span>
@@ -33,6 +33,15 @@
 							<label for="cpf">CPF *</label>
 							<input type="text" class="form-control input-cpf inputs required" id="input-cpf" placeholder="234.567.345-68" oninput ="documentValidate()" autocomplete="off" maxlength="14">
 							<span class="span-required">Digite seu CPF válido com 11 digitos</span>
+						</div>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="col-12">
+						<div class="form-group">
+							<label for="phone">Telefone *</label>
+							<input type="text" class="form-control inputs required" id="phone" placeholder="41876562030" oninput="phoneValidate()">
+							<span class="span-required">Digite seu telefone válido com 11 digitos</span>
 						</div>
 					</div>
 				</div>
@@ -76,7 +85,7 @@
 					<div class="col-12">
 						<div class="form-group">
 							<label for="endereco">Número </label>
-							<input type="text" class="form-control inputs required" id="endereco" placeholder="Informe o número" >
+							<input type="text" class="form-control inputs required" id="numero" placeholder="Informe o número" >
 							<span class="span-required">Necessário preencher seu endereço</span>
 						</div>
 					</div>
@@ -119,15 +128,6 @@
 				<div class="form-row">
 					<div class="col-12">
 						<div class="form-group">
-							<label for="phone">Telefone *</label>
-							<input type="text" class="form-control inputs required" id="phone" placeholder="41876562030" oninput="phoneValidate()">
-							<span class="span-required">Digite seu telefone válido com 11 digitos</span>
-						</div>
-					</div>
-				</div>
-				<div class="form-row">
-					<div class="col-12">
-						<div class="form-group">
 							<label for="pergunta">Pergunta secreta*</label>
 							<div class="form-row">
 								<select name="pergunta" id="pergunta" required>
@@ -149,7 +149,7 @@
 					<div class="col-12">
 						<div class="form-group">
 							<label for="phone">Perfil </label>
-							<input type="text" class="form-control inputs " id="perfil" placeholder="" value="CLIENTE">
+							<input type="text" class="form-control inputs " id="perfil" placeholder="" value="ADMINISTRADOR">
 							
 						</div>
 					</div>
@@ -157,10 +157,8 @@
 
 				<div class="col-12">
 					<button class="btn btn-primary" type="submit" name="form-card-user">Cadastre-se</button>
-				</div> <br>
-				<div class="col-12">
-					<button class="btn btn-info" type="submit" name="form-card-user">Trocar a senha</button>
 				</div>
+				
 			</form>
 		</div>
 	</div>

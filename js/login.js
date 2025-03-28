@@ -58,14 +58,26 @@ document.getElementById('login-form').addEventListener('submit', function(event)
         if(response.user != null) {
             console.log(response.user)
             sessionStorage.setItem('user', JSON.stringify(response.user));
-            window.location.href = `profile.html?profile=${response.user.perfil.id}`;
+            //let p = response.user.perfil.id;
+            //console.log(p)
+            if(response.user.perfil.id === 1) {
+                window.location.replace('cadastroAdm.html');
+            }
+            else if(response.user.perfil.id === 2) {
+                window.location.href = 'profileAdm.html';
+            }
+            else if(response.user.perfil.id === 3) {
+                window.location.href = 'profileAdm.html';
+            }
+            else  {
+                window.location.href = 'erroLogin.html';
+            }       
+            
+            
+            //window.location.href = `profile.html?profile=${response.user.perfil.id}`;
             // -> tela nao authenticada
             // -> tela authenticada dependendo do perfil
         }
-        else {
-            alert('Login falhou: ' + response.message)
-            window.location.href = login.html;
-        }       
     })
     .catch(error => console.error('Erro: ', error))
     

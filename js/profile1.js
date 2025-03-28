@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     if(user) {
         document.getElementById('profileTile').innerHTML = ` 
             <p>Perfil: ${user.perfil.name} </p>
+            <p>Olá ${user.email}</p>
         `
     }
 }) 
