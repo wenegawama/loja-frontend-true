@@ -900,3 +900,16 @@ a:focus {
 #descricao {
   height: 120px;
 }
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+ 
+.footer {
+  background-color:  #1e758d;
+  color: white;
+  width: 100%;
+  padding: 20px 0;
+  margin-top: auto;
+}
