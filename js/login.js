@@ -60,7 +60,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
             sessionStorage.setItem('user', JSON.stringify(response.user));
             //let p = response.user.perfil.id;
             //console.log(p)
-            if(response.user.perfil.id === 1) {
+            /*if(response.user.perfil.id === 1) {
                 window.location.replace('cadastroAdm.html');
             }
             else if(response.user.perfil.id === 2) {
@@ -72,9 +72,9 @@ document.getElementById('login-form').addEventListener('submit', function(event)
             else  {
                 window.location.href = 'erroLogin.html';
             }       
+            */
             
-            
-            //window.location.href = `profile.html?profile=${response.user.perfil.id}`;
+            window.location.href = `profile.html?profile=${response.user.perfil.id}`;
             // -> tela nao authenticada
             // -> tela authenticada dependendo do perfil
         }

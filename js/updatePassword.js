@@ -42,9 +42,13 @@ document.getElementById('updatePassword').addEventListener('submit', (event) => 
             body:JSON.stringify(updateData)
         })
         .then(response => response.json())
-        //.then(response => console.log(response))
+        .then(response => {
+            console.log('Senha do usuário enviado para o backend com sucesso!!' + response.user.password);
+            alert('Senha alterada com sucesso !')
+        })
         .catch(error => {
             console.error('Erro : ', error)
+            alert('Algo deu erro, digite a senha novamente !')
         })
     }
 }) 

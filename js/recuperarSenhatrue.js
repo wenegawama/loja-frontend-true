@@ -34,7 +34,10 @@ document.getElementById('recupararForm').addEventListener('submit', function(eve
             window.location.href = 'updatePassword.html'
         }
     })
-    
+    .catch(error => {
+        console.log('Erro: ', error);
+        alert('Algo deu erro, tente novamente!')
+    });
         /*if(response.user != null) {
             console.log(response.user)
             sessionStorage.setItem('user', JSON.stringify(response.user));
