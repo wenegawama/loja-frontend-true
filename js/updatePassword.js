@@ -34,7 +34,7 @@ document.getElementById('updatePassword').addEventListener('submit', (event) => 
             password: password2
         }
 
-        fetch('http://localhost:8080/api/v1/users/updatePassword', {
+        fetch('http://NPRCURJBE02PYDW.REDECORP.BR:8080/api/v1/users/updatePassword', {
             method:  'PATCH',
             headers: {
                 'Content-Type': 'application/json'
@@ -43,8 +43,8 @@ document.getElementById('updatePassword').addEventListener('submit', (event) => 
         })
         .then(response => response.json())
         .then(response => {
-            console.log('Senha do usuário enviado para o backend com sucesso!!' + response.user.password);
             alert('Senha alterada com sucesso !')
+            console.log('Senha do usuário enviado para o backend com sucesso!!' + response.user.password);
         })
         .catch(error => {
             console.error('Erro : ', error)

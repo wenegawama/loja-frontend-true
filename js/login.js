@@ -8,7 +8,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
         email: email,
         password: password
     }
-    console.log(loginData)
+    //console.log(loginData)
 
     const form =  document.getElementById('login-form');
     const fields = document.querySelectorAll('.required');
@@ -45,7 +45,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
         return;
     }
 
-    fetch('http://localhost:8080/api/v1/auth/login', {   
+    fetch('http://NPRCURJBE02PYDW.REDECORP.BR:8080/api/v1/auth/login', {   
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -54,33 +54,14 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     })
     .then(response => response.json())
     .then(response => {
-        console.log(response)
-        if(response.user != null) {
-            console.log(response.user)
-            sessionStorage.setItem('user', JSON.stringify(response.user));
-            //let p = response.user.perfil.id;
-            //console.log(p)
-            /*if(response.user.perfil.id === 1) {
-                window.location.replace('cadastroAdm.html');
-            }
-            else if(response.user.perfil.id === 2) {
-                window.location.href = 'profileAdm.html';
-            }
-            else if(response.user.perfil.id === 3) {
-                window.location.href = 'profileAdm.html';
-            }
-            else  {
-                window.location.href = 'erroLogin.html';
-            }       
-            */
-            
-            window.location.href = `profile.html?profile=${response.user.perfil.id}`;
-            // -> tela nao authenticada
-            // -> tela authenticada dependendo do perfil
+        //console.log(response)
+        if(response != null) {
+            //console.log(response)
+            sessionStorage.setItem('user', JSON.stringify(response));                
+            window.location.href='/pages/profile.html';
         }
     })
-    .catch(error => console.error('Erro: ', error))
-    
+    .catch(error => console.error('Erro: ', error))    
 })
 
 

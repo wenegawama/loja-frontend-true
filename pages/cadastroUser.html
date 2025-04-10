@@ -4,15 +4,16 @@
 	<title>Tela de Cadastro</title>
 	<!-- Adicionando o CSS do Bootstrap -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-	<link href="css/formcadastro.css" rel="stylesheet" />
+	<link href="/css/formcadastro.css" rel="stylesheet" />
 </head>
 <body>
+	
 	
 	<div class="card">
 
 		<div class="card-header">
 			<h5 class="mb-0">
-				Crie seu cadastro 
+				Crie seu cadastro como cliente
 			</h5>
 		</div>
 		<span id="msg"></span>
@@ -39,8 +40,20 @@
 				<div class="form-row">
 					<div class="col-12">
 						<div class="form-group">
+							<label for="phone">Telefone *</label>
+							<input type="text" class="form-control inputs required" id="phone" placeholder="41876562030"
+								oninput="phoneValidate()" autocomplete="off" maxlength="11">
+							<span class="span-required">Digite seu telefone válido com 11 digitos</span>
+						</div>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="col-12">
+						<div class="form-group">
 							<label for="cep">CEP *</label>
-							<input type="text" class="form-control input-cep inputs required" id="cep" placeholder="98786-543" onblur="pesquisacep(this.value);" autocomplete="off" maxlength="9" oninput="event.target.value = formatarCEP(event.target.value)">
+							<input type="text" class="form-control input-cep inputs required" id="cep"
+								placeholder="98786-543" oninput="zipcodeValidate()" autocomplete="off" maxlength="8">
+							<!--onblur="pesquisacep(this.value);" autocomplete="off" maxlength="9" oninput="event.target.value = formatarCEP(event.target.value)"-->
 							<span class="span-required">Digite seu CEP válido com 8 digitos</span>
 						</div>
 					</div>
@@ -49,8 +62,10 @@
 					<div class="col-12">
 						<div class="form-group">
 							<label for="cidade">Cidade *</label>
-							<input type="text" class="form-control inputs required" id="cidade" placeholder="Rio de Janeiro" >
-							<span class="span-required">Necessário preecher sua cidade corretamente sem carateres especiais e números</span>
+							<input type="text" class="form-control inputs required" id="cidade"
+								placeholder="Rio de Janeiro" oninput="cityValidate()">
+							<span class="span-required">Necessário preecher sua cidade corretamente sem carateres
+								especiais e números</span>
 						</div>
 					</div>
 				</div>
@@ -58,8 +73,10 @@
 					<div class="col-12">
 						<div class="form-group">
 							<label for="cidade">Bairro *</label>
-							<input type="text" class="form-control inputs required" id="bairro" placeholder="Rio de Janeiro" >
-							<span class="span-required">Necessário preecher sua cidade corretamente sem carateres especiais e números</span>
+							<input type="text" class="form-control inputs required" id="bairro"
+								placeholder="Rio de Janeiro" oninput="neighborhoodValidate()">
+							<span class="span-required">Necessário preecher seu bairro corretamente sem carateres
+								especiais e números</span>
 						</div>
 					</div>
 				</div>
@@ -67,8 +84,10 @@
 					<div class="col-12">
 						<div class="form-group">
 							<label for="cidade">Rua *</label>
-							<input type="text" class="form-control inputs required" id="rua" placeholder="Rio de Janeiro" >
-							<span class="span-required">Necessário preecher sua cidade corretamente sem carateres especiais e números</span>
+							<input type="text" class="form-control inputs required" id="rua"
+								placeholder="Rio de Janeiro" oninput="streetValidate()">
+							<span class="span-required">Necessário preecher sua cidade corretamente sem carateres
+								especiais e números</span>
 						</div>
 					</div>
 				</div>
@@ -76,8 +95,9 @@
 					<div class="col-12">
 						<div class="form-group">
 							<label for="endereco">Número </label>
-							<input type="text" class="form-control inputs required" id="endereco" placeholder="Informe o número" >
-							<span class="span-required">Necessário preencher seu endereço</span>
+							<input type="text" class="form-control inputs required" id="numero"
+								placeholder="Informe o número" oninput="numeroValidate()">
+							<span class="span-required">Necessário preencher este campo com números unicamente sem espaço.</span>
 						</div>
 					</div>
 				</div>
@@ -85,7 +105,8 @@
 					<div class="col-12">
 						<div class="form-group">
 							<label for="complemento">Complemento </label>
-							<input type="text" class="form-control" id="complemento" placeholder="Informe o complemento">
+							<input type="text" class="form-control" id="complemento"
+								placeholder="Informe o complemento">
 						</div>
 					</div>
 				</div>
@@ -93,16 +114,18 @@
 					<div class="col-12">
 						<div class="form-group">
 							<label for="referencia">Ponto de referência </label>
-							<input type="text" class="form-control" id="referencia" placeholder="Informe o ponto de referência">
+							<input type="text" class="form-control" id="referencia"
+								placeholder="Informe o ponto de referência">
 						</div>
 					</div>
 				</div>
-				
+
 				<div class="form-row">
 					<div class="col-12">
 						<div class="form-group">
 							<label for="email">Email *</label>
-							<input type="email" class="form-control inputs required" id="email" placeholder="maria@gmail.com" oninput="emailValidate()">
+							<input type="email" class="form-control inputs required" id="email"
+								placeholder="maria@gmail.com" oninput="emailValidate()">
 							<span class="span-required">Necessário informar um email válido</span>
 						</div>
 					</div>
@@ -111,17 +134,9 @@
 					<div class="col-12">
 						<div class="form-group">
 							<label for="senha">Senha *</label>
-							<input type="text" class="form-control inputs required" id="senha" placeholder="Anamaria123@" oninput="passwordValidate()">
+							<input type="text" class="form-control inputs required" id="senha"
+								placeholder="Anamaria123@" oninput="passwordValidate()"> 
 							<span class="span-required">Necessário preecher sua senha com  8 caracteres, pelo menos uma letra maiúscula, um número e um símbolo. </span>
-						</div>
-					</div>
-				</div>
-				<div class="form-row">
-					<div class="col-12">
-						<div class="form-group">
-							<label for="phone">Telefone *</label>
-							<input type="text" class="form-control inputs required" id="phone" placeholder="41876562030" oninput="phoneValidate()">
-							<span class="span-required">Digite seu telefone válido com 11 digitos</span>
 						</div>
 					</div>
 				</div>
@@ -139,7 +154,8 @@
 								</select>
 							</div> <br>
 							<label for="">Resposta secreta</label>
-							<input type="text" class="form-control inputs required" id="resposta_pergunta" placeholder="Piano" oninput="answerValidate()">
+							<input type="text" class="form-control inputs required" id="resposta_pergunta"
+								placeholder="Piano" oninput="answerValidate()">
 							<span class="span-required">Necessário preencher sua resposta</span>
 						</div>
 					</div>
@@ -149,21 +165,40 @@
 					<div class="col-12">
 						<div class="form-group">
 							<label for="phone">Perfil </label>
-							<input type="text" class="form-control inputs " id="perfil" placeholder="" value="CLIENTE">
-							
+							<input type="text" class="form-control inputs " id="perfil" placeholder=""
+								value="CLIENTE">
+
 						</div>
 					</div>
 				</div>
-
 				<div class="col-12">
 					<button class="btn btn-primary" type="submit" name="form-card-user">Cadastre-se</button>
-				</div> <br>
-				<div class="col-12">
-					<button class="btn btn-info" type="submit" name="form-card-user">Trocar a senha</button>
 				</div>
 			</form>
 		</div>
 	</div>
-	<script src="js/cadastroUser.js"></script>
+
+	<!-- Modal de Sucesso -->
+	<div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="successModalLabel">Cadastro Realizado</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+					Usuário cadastrado com sucesso!
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="../js/cadastroUser.js"></script>
 </body>
 </html>

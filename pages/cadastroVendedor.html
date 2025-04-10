@@ -2,10 +2,10 @@
 <html>
 
 <head>
-	<title>Tela de Cadastro do administrador</title>
+	<title>Tela de Cadastro do vendedor</title>
 	<!-- Adicionando o CSS do Bootstrap -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-	<link href="css/formcadastro.css" rel="stylesheet" />
+	<link href="/css/formcadastro.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -14,7 +14,7 @@
 
 		<div class="card-header">
 			<h5 class="mb-0">
-				Crie seu cadastro como administrador
+				Crie seu cadastro como vendedor
 			</h5>
 		</div>
 		<span id="msg"></span>
@@ -34,11 +34,9 @@
 				<div class="form-row">
 					<div class="col-12">
 						<div class="form-group">
-							<label for="cpf">CPF *</label>
-							<input type="text" class="form-control input-cpf inputs required" id="input-cpf"
-								placeholder="234.567.345-68" oninput="documentValidate()" autocomplete="off"
-								maxlength="14">
-							<span class="span-required">Digite seu CPF válido com 11 digitos</span>
+							<label for="cnpj">CNPJ *</label>
+							<input type="text" class="form-control input-cpf inputs required" id="input-cnpj" placeholder="62.173.620/0001-80" oninput = "documentValidate()" autocomplete="off" maxlength="18" >
+							<span class="span-required">Digite seu CNPJ válido com 14 digitos</span>
 						</div>
 					</div>
 				</div>
@@ -47,7 +45,7 @@
 						<div class="form-group">
 							<label for="phone">Telefone *</label>
 							<input type="text" class="form-control inputs required" id="phone" placeholder="41876562030"
-								oninput="phoneValidate()">
+								oninput="phoneValidate()" autocomplete="off" maxlength="11">
 							<span class="span-required">Digite seu telefone válido com 11 digitos</span>
 						</div>
 					</div>
@@ -57,7 +55,7 @@
 						<div class="form-group">
 							<label for="cep">CEP *</label>
 							<input type="text" class="form-control input-cep inputs required" id="cep"
-								placeholder="98786-543">
+								placeholder="98786-543" oninput="zipcodeValidate()" autocomplete="off" maxlength="8">
 							<!--onblur="pesquisacep(this.value);" autocomplete="off" maxlength="9" oninput="event.target.value = formatarCEP(event.target.value)"-->
 							<span class="span-required">Digite seu CEP válido com 8 digitos</span>
 						</div>
@@ -68,7 +66,7 @@
 						<div class="form-group">
 							<label for="cidade">Cidade *</label>
 							<input type="text" class="form-control inputs required" id="cidade"
-								placeholder="Rio de Janeiro">
+								placeholder="Rio de Janeiro" oninput="cityValidate()">
 							<span class="span-required">Necessário preecher sua cidade corretamente sem carateres
 								especiais e números</span>
 						</div>
@@ -79,8 +77,8 @@
 						<div class="form-group">
 							<label for="cidade">Bairro *</label>
 							<input type="text" class="form-control inputs required" id="bairro"
-								placeholder="Rio de Janeiro">
-							<span class="span-required">Necessário preecher sua cidade corretamente sem carateres
+								placeholder="Rio de Janeiro" oninput="neighborhoodValidate()">
+							<span class="span-required">Necessário preecher seu bairro corretamente sem carateres
 								especiais e números</span>
 						</div>
 					</div>
@@ -90,7 +88,7 @@
 						<div class="form-group">
 							<label for="cidade">Rua *</label>
 							<input type="text" class="form-control inputs required" id="rua"
-								placeholder="Rio de Janeiro">
+								placeholder="Rio de Janeiro" oninput="streetValidate()">
 							<span class="span-required">Necessário preecher sua cidade corretamente sem carateres
 								especiais e números</span>
 						</div>
@@ -101,8 +99,8 @@
 						<div class="form-group">
 							<label for="endereco">Número </label>
 							<input type="text" class="form-control inputs required" id="numero"
-								placeholder="Informe o número">
-							<span class="span-required">Necessário preencher seu endereço</span>
+								placeholder="Informe o número" oninput="numeroValidate()">
+							<span class="span-required">Necessário preencher este campo com números unicamente sem espaço.</span>
 						</div>
 					</div>
 				</div>
@@ -140,7 +138,7 @@
 						<div class="form-group">
 							<label for="senha">Senha *</label>
 							<input type="text" class="form-control inputs required" id="senha"
-								placeholder="Anamaria123@" oninput="passwordValidate()"> <!---->
+								placeholder="Anamaria123@" oninput="passwordValidate()"> 
 							<span class="span-required">Necessário preecher sua senha com  8 caracteres, pelo menos uma letra maiúscula, um número e um símbolo. </span>
 						</div>
 					</div>
@@ -158,7 +156,7 @@
 									<option value="esporte">Qual é seu esporte favorito?</option>
 								</select>
 							</div> <br>
-							<label for="">Resposta secreta</label>
+							<label for="">Resposta secreta *</label>
 							<input type="text" class="form-control inputs required" id="resposta_pergunta"
 								placeholder="Piano" oninput="answerValidate()">
 							<span class="span-required">Necessário preencher sua resposta</span>
@@ -171,7 +169,7 @@
 						<div class="form-group">
 							<label for="phone">Perfil </label>
 							<input type="text" class="form-control inputs " id="perfil" placeholder=""
-								value="ADMINISTRADOR">
+								value="VENDEDOR">
 
 						</div>
 					</div>
@@ -207,7 +205,7 @@
 
 
 	</div>
-	<script src="js/cadastroUser.js"></script>
+	<script src="/js/cadastroVendedor.js"></script>
 </body>
 
 </html>

@@ -17,7 +17,7 @@ document.getElementById('recupararForm').addEventListener('submit', function(eve
     console.log(userRecovery)
     
     
-    fetch('http://localhost:8080/api/v1/auth/recovery', {  
+    fetch('http://NPRCURJBE02PYDW.REDECORP.BR:8080/api/v1/auth/recovery', {  
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -42,7 +42,7 @@ document.getElementById('recupararForm').addEventListener('submit', function(eve
             console.log(response.user)
             sessionStorage.setItem('user', JSON.stringify(response.user));
 
-            fetch('http://localhost:8080/api/v1/users/updatePassword', {
+            fetch('http://NPRCURJBE02PYDW.REDECORP.BR:8080/api/v1/users/updatePassword', {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json'
