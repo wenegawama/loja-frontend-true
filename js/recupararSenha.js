@@ -25,8 +25,9 @@ document.getElementById('recupararForm').addEventListener('submit', function(eve
         body: JSON.stringify(userData)
     })
     .then(response => response.json())
-    .then(data => {
-        alert('Dados enviados com sucesso para atualização!')
+    .then(response => {
+        alert('Dados enviados com sucesso para atualização!' )
+        console.log(response)
     })
     .catch(error => {
         console.log('Error: ', error)

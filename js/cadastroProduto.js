@@ -22,8 +22,42 @@ document.getElementById('produtoForm').addEventListener('submit', function(event
         const categoria = categoriaSelecionada.options[categoriaSelecionada.selected].innerText;
         console.log('Categoria selecionada: ', categoria);
     })
+
+    //Validação dos campos
+    
+    const form =  document.getElementById('produtoForm');
+    const fields = document.querySelectorAll('.required');
+    const spans = document.querySelectorAll('.span-required');
+    
+    const quantidadeRegex = /^[1-9]\\d*$/
+
+    function setError(index) {
+        fields[index].style.border = "2px solid #e63636"
+        spans[index].style.display = "block"
+    }
+    
+    function removeError(index) {
+        if(fields[index]) {
+            fields[index].style.border = ""
+        }
+        if(spans[index]) {
+            spans[index].style.display = "none"
+        }
+    }
+
+    function quantidadeValidate() {
+        if(!quantidadeRegex.test(nome)) {
+            console.log('não validou')
+            setError(0)
+        }
+        else {
+            console.log('validou')
+            removeError(0)
+        }
+    } 
     
 
+    //
     const user = JSON.parse(sessionStorage.getItem('user'))
     console.log(user)
 

@@ -47,11 +47,10 @@ function displayProducts(products) {
       </div>`        
     });
     
-    productContainer.innerHTML =produtos;
+    productContainer.innerHTML = produtos;
 }
 window.onload = () => {
     fetchAllProducts()
 }
 
 //estilizar o card
-
