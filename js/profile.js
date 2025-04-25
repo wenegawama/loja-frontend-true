@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     const user = JSON.parse(sessionStorage.getItem('user'))
-    //console.log(user)
+    console.log(user)
 
     if(user) {
         document.getElementById('profileTile').innerHTML = ` 
