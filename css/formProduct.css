@@ -1,0 +1,20 @@
+.span-required {
+  display: none;
+  font-size: 12px;
+  margin: 3px 0 0 1px;
+  color: red;
+}
+.btn-cadastrar {
+  width: 40%;
+  font-weight: bold;
+  display: block;
+  margin: 8px auto 0;
+}
+
+.toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1100;
+  
+}

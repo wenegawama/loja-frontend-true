@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - WenShop</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .footer_section {
+            background-color: #f8f9fa;
+            padding: 40px 0;
+        }
+        .footer_detail, .footer_link_box, .footer_contact {
+            margin-bottom: 30px;
+        }
+        .footer_social a {
+            margin-right: 10px;
+            color: #333;
+        }
+        .footer_social a:hover {
+            color: #007bff;
+        }
+        .footer-info {
+            background-color: #e9ecef;
+            padding: 20px 0;
+            text-align: center;
+        }
+    </style>
+    
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand d-none d-lg-flex" href="index.html">
+                <img src="images/Preview.png" width="120px" height="120px" />
+              </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+   
+        </nav>
+    </header>
+
+    <main class="container my-5">
+        <h1>Contate-nos</h1>
+        <p>Se você tiver alguma dúvida ou precisar de mais informações, entre em contato conosco através dos meios abaixo:</p>
+        <div class="row">
+            <div class="col-md-6">
+                <h4>Endereço</h4>
+                <p>Rua wenshop, 123 - Centro - Curitiba - Cep 33333333</p>
+                <h4>Telefone</h4>
+                <p>+41 111111111</p>
+                <h4>Email</h4>
+                <p>wenshop@gmail.com</p>
+                <h4>Horário de Funcionamento</h4>
+                <p>Seg-Sab: 09.00 - 18.00</p>
+                <p>Domingo: Fechado</p>
+            </div>
+            <div class="col-md-6">
+                <h4>Envie-nos uma mensagem</h4>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Nome</label>
+                        <input type="text" class="form-control" id="name" placeholder="Seu nome">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Seu email">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensagem</label>
+                        <textarea class="form-control" id="message" rows="5" placeholder="Sua mensagem"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-3 footer-col">
+                    <div class="footer_detail">
+                        <h4>Sobre</h4>
+                        <p>Melhor lugar para comprar e vender roupas</p>
+                        <div class="footer_social">
+                            <a href="">
+                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                            </a>
+                            <a href="">
+                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                            </a>
+                            <a href="">
+                                <i class="fa fa-linkedin" aria-hidden="true"></i>
+                            </a>
+                            <a href="">
+                                <i class="fa fa-instagram" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-2 mx-auto footer-col">
+                    <div class="footer_link_box">
+                        <h4>Links</h4>
+                        <div class="footer_links">
+                            <a class="active" href="index.html">Home</a>
+                            <a class="" href="service.html">Serviços</a>
+                            <a class="" href="about.html">Sobre</a>
+                            <a class="" href="why.html">Por que nos escolher</a>
+                            <a class="" href="contact.html">Contatos</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 footer-col">
+                    <div class="footer_contact">
+                        <h4>Nossos contatos</h4>
+                        <div class="contact_link_box">
+                            <p>
+                                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                <span>Rua wenshop, 123 - Centro - Curitiba - Cep 33333333</span>
+                            </p>
+                            <a href="">
+                                <i class="fa fa-phone" aria-hidden="true"></i>
+                                <span>Call +41 111111111</span>
+                            </a>
+                            <a href="">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                                <span>wenshop@gmail.com</span>
+                            </a>
+                            <p>
+                                <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                <span>Seg-Sab: 09.00 - 18.00</span>
+                            </p>
+                            <p>
+                                <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                <span>Sunday: Fechado</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-info">
+            <div class="container">
+                <p>&copy; <span id="displayYear"></span> Direitos reservados <a href="https://html.design/">WenShop</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById('displayYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

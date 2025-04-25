@@ -17,7 +17,7 @@ document.getElementById('recupararForm').addEventListener('submit', function(eve
     console.log(userData)
 
     
-    fetch('http://localhost:8080/api/v1/users/recovery', {   
+    fetch('http://NPRCURJBE02PYDW.REDECORP.BR:8080/api/v1/users/recovery', {   
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -25,8 +25,9 @@ document.getElementById('recupararForm').addEventListener('submit', function(eve
         body: JSON.stringify(userData)
     })
     .then(response => response.json())
-    .then(data => {
-        alert('Dados enviados com sucesso para atualização!')
+    .then(response => {
+        alert('Dados enviados com sucesso para atualização!' )
+        console.log(response)
     })
     .catch(error => {
         console.log('Error: ', error)
