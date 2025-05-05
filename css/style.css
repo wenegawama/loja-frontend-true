@@ -920,3 +920,13 @@ body {
 .card {
   background-color: #fff;
 }
+.card:hover {
+  background-color: blue;
+}
+.product {
+  border: 1px solid black;
+}
+
+hr {
+  border: 1px solid black;
+}

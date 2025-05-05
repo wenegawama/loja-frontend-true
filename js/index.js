@@ -1,34 +1,27 @@
-
-//const user = JSON.parse(sessionStorage.getItem('user'))
-
 let products = []
 
 async function fetchAllProducts () {
-    //try {
             const urlBase = "http://NPRCURJBE02PYDW.REDECORP.BR:8080/api/v1/users/sellers/products"
             fetch(urlBase)
             .then(response => response.json())
             .then(response => {
                 products = response
                 displayProducts(products)
+                searchProducts()
     })
             console.log(products)
-           
-    /*} catch (error) {
-        console.error("Erro ao carregar os produtos: ", error)
-    }*/
 }
 
 function displayProducts(products) {
     const productContainer = document.getElementById('productList')
     
-    var produtos = ''
+    let produtos = ''
     products.forEach(product => {
 
         produtos = produtos+ 
         `<div class="col-md-4 mb-4">
             <div class="card">
-            <a href="./produto.html?id=${product.id}">
+            <a href="/pages/produto.html?id=${product.id}">
                 <img
                 src="https://www.chersamis.com.br/media/img/content/produtos/default.jpg"
                 width="20px" class="card-img-top" alt="${product.name}">
@@ -43,6 +36,16 @@ function displayProducts(products) {
     
     productContainer.innerHTML = produtos;
 }
+
+function searchProducts() {
+    const searchInput = document.getElementById('searchInput')
+    searchInput.addEventListener('keyup', function () {
+        const input = this.value.toLowerCase()
+        const filterProducts = products.filter(product => product.name.toLowerCase().includes(input))
+        displayProducts(filterProducts)
+    })
+}
+
 window.onload = () => {
     fetchAllProducts()
 }
