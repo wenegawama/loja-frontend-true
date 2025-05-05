@@ -17,21 +17,6 @@
   <script src="js/jquery-3.5.1.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="./js/index.js"></script>
-
-  <!--<script>
-    document.getElementById('searchInput').addEventListener('keyup', function() {
-        var input = this.value.toLowerCase();
-        var cards = document.querySelectorAll('#productList .card');
-        cards.forEach(function(card) {
-            var title = card.querySelector('.card-title').textContent.toLowerCase();
-            if (title.includes(input)) {
-                card.parentElement.style.display = '';
-            } else {
-                card.parentElement.style.display = 'none';
-            }
-        });
-    });
-    </script>-->
     
 </head>
 
@@ -51,7 +36,7 @@
 
                       <img src="images/login.png" width="30px" height="30px" />
                     </a></td>
-                  <td align="center"> <a href="cart.html">
+                  <td align="center"> <a href="/pages/carrinho.html">
 
                       <img src="images/cart.png" width="20px" height="20px" />
                     </a></td>
@@ -104,9 +89,13 @@
       <div class="input-group mb-3">
         <input type="text" class="form-control" id="searchInput" placeholder="Pesquisar produtos...">
       </div>
+       <!-- Lista dos produtos -->
       <div class="row" id="productList">
-        
       </div>
+      <!-- Mostrar um produto especifico-->
+       <div class="row" id="singleProduct">
+
+       </div>
     </div>
 
     <!-- footer section -->
