@@ -930,3 +930,9 @@ body {
 hr {
   border: 1px solid black;
 }
+.inputQuantidade {
+  max-width: 30px;
+}
+.botao {
+  border: #fff 1px solid;
+}
