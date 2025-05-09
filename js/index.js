@@ -9,7 +9,7 @@ async function fetchAllProducts () {
                 displayProducts(products)
                 searchProducts()
     })
-            console.log(products)
+            //console.log(products)
 }
 
 function displayProducts(products) {

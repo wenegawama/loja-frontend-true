@@ -33,20 +33,21 @@ function mostrarCarrinho () {
                     <td>${item.price}</td>
                     <td>
                     <div class="container align-items-center">
-                        <button class="botao" id="btnMenos"><img src="/images/menos.png" alt="Botão menos" height="20px" width="20px"></button>
-                        <input type="text" name="" id="inputQuantidade" class="inputQuantidade" height="20px"  value="1">
-                        <button class="botao" id="btnMais"><img src="/images/mais.png" alt="Botão mais" height="20px" width="20px"></button>
+                        <button class="botao btnMenos" data-index="${index}"><img src="/images/menos.png" alt="Botão menos" height="20px" width="20px"></button>
+                        <input type="text" name="" id="inputQuantidade" class="inputQuantidade" height="20px"  value="${item.quantity || 1}" readonly>
+                        <button class="botao btnMais" data-index="${index}"><img src="/images/mais.png" alt="Botão mais" height="20px" width="20px"></button>
                     </div>
                     </td>
                     <td><button class="text-white bg-danger  rounded" onclick="removerDoCarrinho(${index})">Remover</button></td>
             `
             tabela.appendChild(linha)
     })
+    adicionarEventosBotoes()
     atualizarCarrinho(cart)
 }
 
 function atualizarCarrinho (cart) {
-    const total = cart.reduce((sum, item) => sum + parseFloat(item.price), 0) 
+    const total = cart.reduce((sum, item) => sum + parseFloat(item.price) * item.quantity, 0) 
 
     document.getElementById('total').innerHTML = `<p id="total" px-5><b>Total : </b>R$ ${total.toFixed(2)} </p>`
 }
@@ -59,4 +60,38 @@ function removerDoCarrinho (index) {
     mostrarCarrinho()
 }
 
+//Add eventos botões
+ function adicionarEventosBotoes() {
+    const cart = JSON.parse(localStorage.getItem('carrinho')) || []
+    
+    document.querySelectorAll('.btnMais').forEach((btnMais) => {
+        btnMais.addEventListener('click', () => {
+            const index = btnMais.getAttribute('data-index')
+            
+            //console.log(index)
+
+            cart[index].quantity = (cart[index].quantity || 1) + 1
+            localStorage.setItem('carrinho', JSON.stringify(cart))
+            mostrarCarrinho()
+        })
+    })
+    
+    document.querySelectorAll('.btnMenos').forEach((btnMenos) => {
+        btnMenos.addEventListener('click', () => {
+            const index = btnMenos.getAttribute('data-index')
+            
+            if (cart[index].quantity > 1) {
+                cart[index].quantity = cart[index].quantity -1
+            }
+
+            localStorage.setItem('carrinho', JSON.stringify(cart))
+            mostrarCarrinho()
+        })
+    })
+ }
+
 document.addEventListener ('DOMContentLoaded', mostrarCarrinho) 
+
+document.getElementById('compra').addEventListener('click', () => {
+    window.location.href = '/pages/pagamentos.html'
+})
