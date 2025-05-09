@@ -91,3 +91,7 @@ function removerDoCarrinho (index) {
  }
 
 document.addEventListener ('DOMContentLoaded', mostrarCarrinho) 
+
+document.getElementById('compra').addEventListener('click', () => {
+    window.location.href = '/pages/pagamentos.html'
+})
