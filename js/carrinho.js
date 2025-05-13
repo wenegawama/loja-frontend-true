@@ -47,7 +47,14 @@ function mostrarCarrinho () {
 }
 
 function atualizarCarrinho (cart) {
-    const total = cart.reduce((sum, item) => sum + parseFloat(item.price) * item.quantity, 0) 
+    const total = cart.reduce((sum, item) => {
+
+        const price = parseFloat(item.price?.toString().replace("R$", "").replace(",", ".").trim() || 0)
+        const quantity = parseInt(item.quantity, 10) || 1
+
+        return sum + price * quantity
+
+    }, 0)
 
     document.getElementById('total').innerHTML = `<p id="total" px-5><b>Total : </b>R$ ${total.toFixed(2)} </p>`
 }
