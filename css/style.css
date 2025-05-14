@@ -936,3 +936,8 @@ hr {
 .botao {
   border: #fff 1px solid;
 }
+.input-pequeno {
+  width: 100%;
+  max-width: 400px;
+  display: inline-block;
+}

@@ -54,11 +54,17 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     })
     .then(response => response.json())
     .then(response => {
-        //console.log(response)
         if(response != null) {
-            //console.log(response)
-            sessionStorage.setItem('user', JSON.stringify(response));                
-            window.location.href='/pages/profile.html';
+            sessionStorage.setItem('user', JSON.stringify(response));   
+            
+            const params = new URLSearchParams(window.location.search)
+            const redirect = params.get('redirect')
+
+            if (redirect) {
+                window.location.href='/pages/pagamentos.html';
+            } else {
+                window.location.href='/pages/profile.html'
+            } 
         }
     })
     .catch(error => console.error('Erro: ', error))    
