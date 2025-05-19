@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
     .catch(error => console.error(error))
 })
 
+
 document.addEventListener('DOMContentLoaded', (event) => {
     const user = JSON.parse(sessionStorage.getItem('user'))
 
@@ -37,16 +38,51 @@ document.addEventListener('DOMContentLoaded', (event) => {
             const numeroCartao = document.getElementById('numero').value
             const validade = document.getElementById('validade').value
             const cvc = document.getElementById('cvc').value
+            //const metodoPagamento = "Cartão"
+            const tipoCartaoValue = tipoCartao.value;
+            const metodoPagamento = tipoCartaoValue === 'débito' ? "Cartão de Débito" : "Cartão de Crédito";
 
-            
+            const tipoCartaoDebito = document.getElementById('tipoCartaodebito')
+            const tipoCartaoCredito = document.getElementById('tipoCartaocredito')
+            const tipoCartao = document.getElementById('tipoCartao');
+
+            if (tipoCartao) {
+                tipoCartaoDebito.addEventListener('click', () => {
+                    tipoCartao.value = 'débito'
+                    console.log(tipoCartao.value)
+                })
+            }
+
 
             const dadosCartao = {
-                name: nomeTitular,
-                numero: numeroCartao,
+                nameCard: nomeTitular,
+                numberCard: numeroCartao,
                 validaty: validade,
-                cvc : cvc
+                cvc : cvc,
+                typeCard: tipoCartao,
+                typeMetodoPagamento: metodoPagamento,
+                idContact: user
             }
             console.log(dadosCartao)
+
+            // Enviar para o backend
+            fetch('http://NPRCURJBE02PYDW.REDECORP.BR:8080/api/v1/card/create', {  
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(dadosCartao)
+            })
+            .then(response => response.json())
+            .then(response => {
+                console.log('Dados do cartão enviados para o backend com sucesso!!' + response);
+                alert('Cartão cadastrado com sucesso!')
+            })
+            .catch(error => {
+                console.log('Erro: ', error);
+                alert('Algo deu erro, tente novamente!')
+            });
+
         })
 
     } else {
@@ -138,7 +174,10 @@ if (form) {
             // form.submit(); // Descomente para enviar de verdade
 
             //form.reset()
-            toast.show() 
+            //toast.show()
+            
+            
+
         }
     });
 
