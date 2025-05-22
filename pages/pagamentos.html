@@ -15,8 +15,9 @@
 
         <div class="container bg-primary mb-3">
           <div id="tipoCartao">
-            <button id="tipoCartaodebito" class="btn bg-danger text-white mx-0">Débito</button>
-            <button id="tipoCartaocredito" class="btn bg-white">Crédito</button>
+              <input class="d-none"  value="">
+              <button id="debito" class="btn bg-danger text-white mx-0">Débito</button>
+            <button id="credito" class="btn bg-white">Crédito</button>
           </div>
           <div class="card-body  mb-2" style="background:#f3f1ed;">
             <form action="" id="cartao" method="post">
@@ -24,7 +25,8 @@
                   <div class="form-row">
                     <div class="col-12">                    
                         <label for="nome" id="labelNome" class="text-black">Nome do titular do cartão débito*</label><br>
-                        <input type="text"  id="nome" class="input-pequeno" placeholder="Maria Silveira Da Silva" >                   
+                        <input type="text"  id="nome" class="input-pequeno" placeholder="Maria Silveira Da Silva" >  <!--<br> oninput="fullNameValidate()"--
+                        <!--<span class="span-required" >O Nomedo titular do cartão deve conter duas ou mais palavras, cada uma com pelo menos 2 caracteres, sem números ou caracteres especiais.</span>  -->               
                     </div>
                   </div>
                   <div class="form-row">
@@ -36,13 +38,14 @@
                   <div class="form-row d-flex mb-4">
                     <div class="col-6"> 
                         <label for="validade" class="text-black">Validade *</label><br>
-                        <input type="text"  id="validade" class="input-pequeno" placeholder="10/30" inputmode="numeric" pattern="\d*" maxlength="5">   
+                        <input type="text" id="validade" class="input-pequeno" placeholder="MM/AA" inputmode="numeric" pattern="(0[1-9]|1[0-2])\/\d{2}" maxlength="5">
                     </div>
                     <div class="col-6">
                         <label for="cvc" class="text-black">Código de segurança *</label><br>
                         <input type="text" id="cvc" class="input-pequeno" placeholder="669" inputmode="numeric" pattern="\d*" maxlength="3">
                     </div>
                 </div>
+                
 
                 
 
@@ -55,6 +58,13 @@
                   </div>
                 </div>
                 </div>
+                <div class="form-row d-none">
+                  <div class="col-12">
+                      <label for="numero" id="labelNumero" class="text-black">Método de pagamento*</label><br>
+                      <input type="text"  id="metodoPagamento" value="Cartão">
+                  </div>
+                </div>
+                
 
                 
 
