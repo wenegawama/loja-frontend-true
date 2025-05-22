@@ -25,24 +25,27 @@
                   <div class="form-row">
                     <div class="col-12">                    
                         <label for="nome" id="labelNome" class="text-black">Nome do titular do cartão débito*</label><br>
-                        <input type="text"  id="nome" class="input-pequeno" placeholder="Maria Silveira Da Silva" >  <!--<br> oninput="fullNameValidate()"--
-                        <!--<span class="span-required" >O Nomedo titular do cartão deve conter duas ou mais palavras, cada uma com pelo menos 2 caracteres, sem números ou caracteres especiais.</span>  -->               
+                        <input type="text"  id="nome" class="input-pequeno required" placeholder="Maria Silveira Da Silva" oninput="fullNameValidate()">  <br> 
+                        <span class="spanRequired" >O Nome do titular do cartão deve conter duas ou mais palavras, cada uma com pelo menos 2 caracteres, sem números ou caracteres especiais.</span>                
                     </div>
                   </div>
                   <div class="form-row">
                     <div class="col-12">
                         <label for="numero" id="labelNumero" class="text-black">Número do cartão débito*</label><br>
-                        <input type="text"  id="numero" class="input-pequeno" placeholder="5313 4034 5959 9541" inputmode="numeric" pattern="\d*" maxlength="16">
+                        <input type="text"  id="numero" class="input-pequeno required" placeholder="5313 4034 5959 9541" inputmode="numeric" pattern="\d*"  oninput="numeroValidate()"  maxlength="16">
+                        <span class="spanRequired" >Esse campo aceita somente números de 16 dígitos.</span>                
                     </div>
                   </div>
                   <div class="form-row d-flex mb-4">
                     <div class="col-6"> 
                         <label for="validade" class="text-black">Validade *</label><br>
-                        <input type="text" id="validade" class="input-pequeno" placeholder="MM/AA" inputmode="numeric" pattern="(0[1-9]|1[0-2])\/\d{2}" maxlength="5">
+                        <input type="text" id="validade" class="input-pequeno required" placeholder="MM/AA" inputmode="numeric" pattern="(0[1-9]|1[0-2])\/\d{2}" maxlength="5" oninput="validadeValidate()">
+                        <span class="spanRequired" >Esse campo aceita somente números no  formato MM/AA com MM entre 01-12 e AA superior a 25.</span> 
                     </div>
                     <div class="col-6">
                         <label for="cvc" class="text-black">Código de segurança *</label><br>
-                        <input type="text" id="cvc" class="input-pequeno" placeholder="669" inputmode="numeric" pattern="\d*" maxlength="3">
+                        <input type="text" id="cvc" class="input-pequeno required" placeholder="669" inputmode="numeric" pattern="\d*" maxlength="3" oninput="cvcValidate()">
+                        <span class="spanRequired" >Esse campo aceita somente números de 3 dígitos.</span> 
                     </div>
                 </div>
                 

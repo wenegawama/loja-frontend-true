@@ -73,6 +73,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
             };
             console.log(dadosCartao);
 
+            if (!nomeTitular || !numeroCartao || !validade || !cvc || !tipoCartaoValue ) {
+                alert('Por favor, clica no botão para escolher o tipo de cartão e preencha todos os campos antes de enviar!');
+                return;
+            }
+
             fetch('http://NPRCURJBE02PYDW.REDECORP.BR:8080/api/v1/card/create', {  
                 method: 'POST',
                 headers: {
@@ -96,19 +101,20 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 
-/*Validação dos campos
+//Validação dos campos
 const form =  document.getElementById('cartao');
 const fields = document.querySelectorAll('.required');
-const spans = document.querySelectorAll('.span-required');
+const spans = document.querySelectorAll('.spanRequired');
 
-const fullNameRegex = /^([a-zA-Z]{2,}\s[a-zA-Z]{2,})$/
-
+const fullNameRegex = /^([a-zA-Z]{2,})(\s[a-zA-Z]{2,})+$/
+const numeroRegex = /^\d{16}$/
+const validadeRegex = /^(0[1-9]|1[0-2])\/(25|2[6-9]|[3-9][0-9])$/;
+const cvcRegex = /^\d{3}$/
 
 function setError(index) {
     fields[index].style.border = "2px solid #e63636"
     spans[index].style.display = "block"
 }
-
 function removeError(index) {
     if(fields[index]) {
         fields[index].style.border = ""
@@ -126,84 +132,35 @@ function fullNameValidate() {
         removeError(0)
     }
 }
-
-function documentValidate() {
-    if(!documentRegex.test(fields[1].value)) {
+function numeroValidate() {
+    if(!numeroRegex.test(fields[1].value)) {
         setError(1)
     }
     else {
         removeError(1)
     }
 }
-*/
-
-// Validação do formulário
-const form = document.getElementById('cartao');
-if (form) {
-    form.addEventListener('submit', function (event) {
-        event.preventDefault();
-        let valid = true;
-        document.querySelectorAll('.msg-erro').forEach(el => el.remove());
-
-        const nome = document.getElementById('nome');
-        const nomeValor = nome.value.trim();
-        const nomeRegex = /^([A-Za-zÀ-ú]{2,}\s){1,}[A-Za-zÀ-ú]{2,}$/;
-        if (!nomeRegex.test(nomeValor)) {
-            mostrarErro(nome, 'O Nome Completo deve conter duas ou mais palavras, cada uma com pelo menos 2 letras, sem números ou caracteres especiais.');
-            valid = false;
-        }
-
-        const numero = document.getElementById('numero');
-        const numeroValor = numero.value.replace(/\s/g, '');
-        const numeroRegex = /^\d{16}$/
-        if (!numeroRegex.test(numeroValor)) {
-            mostrarErro(numero, 'O número do cartão deve conter 16 dígitos.');
-            valid = false;
-        }
-
-        const validade = document.getElementById('validade');
-        const validadeValor = validade.value.trim();
-        const validadeRegex = /^(\d{2}\/\d{2}|\d{4})$/
-        if (!validadeRegex.test(validadeValor)) {
-            mostrarErro(validade, 'A validade deve estar no formato MM/AA ou MMAA.');
-            valid = false;
-        }
-
-        const cvc = document.querySelector('input[placeholder="669"]');
-        const cvcValor = cvc.value.trim();
-        const cvcRegex = /^\d{3}$/
-        if (!cvcRegex.test(cvcValor)) {
-            mostrarErro(cvc, 'O código de segurança deve conter 3 dígitos.');
-            valid = false;
-        }
-
-        document.getElementById('numero').addEventListener('input', (e) => {
-            if(this.value.length > 16) {
-                this.value = this.value.slice(0, 16)
-            }
-        })
-
-
-        const toastElemento = document.getElementById('successToast')
-        const toast = new bootstrap.Toast(toastElemento, {delay: 5000})
-
-        if (valid) {
-            //form.insertAdjacentHTML('beforeend', '<div class="msg-sucesso text-success mt-2">Cartão salvo com sucesso!</div>');
-             form.submit(); // Descomente para enviar de verdade
-
-            //form.reset()
-            //toast.show()
-            
-            
-
-        }
-    });
-
-    function mostrarErro(input, mensagem) {
-        const erro = document.createElement('div');
-        erro.className = 'msg-erro text-danger mb-2';
-        erro.textContent = mensagem;
-        input.parentNode.appendChild(erro);
+function numeroValidate() {
+    if(!numeroRegex.test(fields[1].value)) {
+        setError(1)
+    }
+    else {
+        removeError(1)
     }
 }
-
+function validadeValidate() {
+    if(!validadeRegex.test(fields[2].value)) {
+        setError(2)
+    }
+    else {
+        removeError(2)
+    }
+}
+function cvcValidate() {
+    if(!cvcRegex.test(fields[3].value)) {
+        setError(3)
+    }
+    else {
+        removeError(3)
+    }
+}
