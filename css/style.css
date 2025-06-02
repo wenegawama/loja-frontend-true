@@ -947,3 +947,9 @@ hr {
   margin: 3px 0 0 1px;
   color: red;
 }
+.cart-icon {
+  margin-left: 10px; /* Ajuste o valor conforme necessário */
+}
+.img-deletar {
+  float: inline-end;
+}

@@ -21,6 +21,10 @@ async function fetchAllProducts (idVend) {
                              <td>${produto.quantity}</td>
                              <td>${produto.category}</td>
                              <td>${produto.description}</td>
+                             <td>
+                                <a href="/pages/editProduct.html" ><img src="/images/icone-editar.png" height="22px" id="edit-Product"></a>
+                                <a href="/pages/editProduct.html" ><img src="/images/icone-deletar.png" height="20px" class="img-deletar" id="delete-Product"></a>
+                             </td>
                          `
                          tabela.appendChild(linha)
                      })
