@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             console.log(dadosCartao);
 
             if (!nomeTitular || !numeroCartao || !validade || !cvc || !tipoCartaoValue ) {
-                alert('Por favor, clica no botão para escolher o tipo de cartão e preencha todos os campos antes de enviar!');
+                alert('Por favor, clica no botão para escolher o tipo de cartão e preencha todos os campos antes de salvar os dados do cartão!');
                 return;
             }
 

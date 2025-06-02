@@ -1,23 +1,3 @@
-/*
-let contador  = 1
-
-document.getElementById('btnMais').addEventListener('click', function aumentar() {
-    const contador = document.getElementById('inputQuantidade').value
-    //input.value = quantidade
-    console.log(contador)
-}) 
-
-function aumentar(contador = 1) {
-    return contador ++
-}
-
-let productData = document.cookie
-console.log('Carrinho - Dados do item produto adicionado : '+ productData)
-console.log('Tamanho do carrinho: '+ productData.length)
-
-*/
-
-/*--------------------------------------*/
 function mostrarCarrinho () {
     const cart = JSON.parse(localStorage.getItem('carrinho')) || []
     console.log(cart)

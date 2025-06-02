@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Editar produto</title>
+  <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../css/style.css" type="text/css"/>
+  <link href="/css/formProduct.css" rel="stylesheet" />
+  
+</head>
+</head>
+<body>
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="header_top">
+        <div class="container-fluid">
+          <div class="top_nav_container">
+            <a class="navbar-brand d-none d-lg-flex" href="/index.html">
+              <span> WenShop </span>
+            </a>
+            <div class="contact_nav">
+              <a href="/" class="btn btn-danger w-100" id="sair">Sair</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="container mt-2">
+      <h2 class="row justify-content-center">Editar produto</h2>
+      <form id="produtoForm" method="PUT">
+        <div class="mb-3">
+          <label for="nome" class="form-label">Nome</label>
+          <input type="nome" class="form-control required" id="nome"  aria-describedby="Nome do produto"
+            placeholder="Digite o nome do produto" oninput="nameValidate()"/> 
+          <span class="span-required">O Nome deve conter duas ou mais palavras, cada uma com pelo menos
+            2 caracteres, sem números ou caracteres especiais mas aceita hifen somente.</span>
+        </div>
+        <div class="mb-3">
+          <label for="preco" class="form-label ">Preço (R$)</label>
+          <input type="text" class="form-control required" id="preco" aria-describedby="Preço do produto" placeholder="35,99" oninput="precoValidate()" />
+          <span class="span-required">O preço deve ser um valor superior a R$ 01,00 </span>
+        </div>
+        <div class="mb-3">
+          <label for="tamanho" class="form-label required">Tamanho</label>
+          <select name="tamanho" id="tamanho" class="form-select" required>
+            <option value="instrumento">P</option>
+            <option value="prato">M</option>
+            <option value="livro">G</option>
+            <option value="cor">GG</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="cor" class="form-label">Cor</label>
+          <input type="cor" class="form-control required" id="cor" aria-describedby="Cor do produto"
+            placeholder="Digite a cor do produto" oninput="corValidate()"/>
+          <span class="span-required">A cor deve ser uma palavra com pelo menos 4 caracteres, sem
+            números ou caracteres especiais mas aceita o hífen.</span>
+        </div>
+        <div class="mb-3">
+          <label for="quantidade" class="form-label">Quantidade</label>
+          <input type="number" class="form-control required" id="quantidade" 
+            placeholder="Digite a quantidade do produto" oninput="quantidadeValidate()" />
+          <span class="span-required">Deve ser um número inteiro maior que um</span>
+        </div>
+        <div class="mb-3">
+          <label for="categoria" class="form-label">Categoria</label>
+          <select name="categoria" id="categoria" class="form-select required" >
+            <option value="masculino">Masculino</option>
+            <option value="feminino">Feminino</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="descricao" class="form-label">Descrição</label>
+          <textarea class="form-control required" id="descricao" rows="5" placeholder="Digite a descrição do produto"></textarea>
+          <span class="span-required"></span>
+        </div>
+        <button type="submit" class="btn btn-primary btn-cadastrar">Salvar</button>
+        
+        <div class="toast-container">
+          <div id="successToast" class="toast align-items-center text-black bg-success" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+              <div class="toast-body">
+                Produto editado com sucesso !
+              </div>
+              <div type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="close"></div>
+            </div>
+          </div>
+        </div>
+
+      </form>
+      <footer></footer>
+    </div>
+  </div>
+  <script  src="/js/jquery-3.5.1.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script  src="/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/editarProduto.js"></script>
+</body>
+</html>
