@@ -920,9 +920,7 @@ body {
 .card {
   background-color: #fff;
 }
-.card:hover {
-  background-color: blue;
-}
+
 .product {
   border: 1px solid black;
 }
@@ -953,3 +951,9 @@ hr {
 .img-deletar {
   float: inline-end;
 }
+
+
+.product-card {
+  margin: 5px;
+}
+  
