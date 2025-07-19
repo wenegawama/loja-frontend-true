@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produtos</title>
+    <title>Cadastro massivo Produtos</title>
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
   <link href="/css/font-awesome.min.css" rel="stylesheet" />
   <link href="/css/style.css" rel="stylesheet" />
@@ -41,29 +41,21 @@
             </div>
           </div>
         </header>
-        <!-- end header section -->
-        <!-- slider section -->
-   <div class="container mt-1">
-      <h2 class="row justify-content-center">Meus produtos</h2>
-      <table class="table table-hover table-success  table-striped-columns  table-bordered table-group-divider ">
-        <thead>
-          <tr>
-            <th>Nome do produto</th>
-            <th>Preço(R$)</th>
-            <th>Tamanho</th>
-            <th>Cor</th>
-            <th>Quantidade</th>
-            <th>Categoria</th>
-            <th>Descrição</th>
-            <th>Ações</th>
-          </tr>
-        </thead>
-        <tbody id="tabela">
-          
-        </tbody>
-      </table>
-   </div>
-
-   <script src="/js/produtos.js"></script>
+   
+        <div class="container">
+            <h2 class="mb-4 text-center">Cadastro Massivo de Produtos</h2>
+            <h3 class="mb-4 text-center" >Exemplo do Arquivo csv</h3>
+            <img src="/images/img-exemplo-csv.png" alt="Exemplo do Arquivo csv" class="d-block mx-auto img-fluid" style="max-width: 100%; height: auto;">
+            <form id="uploadForm">
+                <br>
+                <div class="mb-3">
+                    <label for="csvFile" class="form-label">Arquivo CSV</label>
+                    <input class="form-control" type="file" id="csvFile" accept=".csv" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Enviar</button>
+            </form>
+            <div id="responseMessage" class="mt-4"></div>
+        </div>
+   <script src="/js/cadastroMassivo.js"></script>
 </body>
 </html>
