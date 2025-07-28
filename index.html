@@ -1,209 +1,133 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <link rel="icon" href="images/favicon.png" type="image/gif" />
-  <meta name="keywords" content="" />
-  <meta name="Loja online criada para o treinamento de desenvolvimento com o Alex" content="" />
-  <meta name="Wenega Wama" content="" />
-  <title>Loja online</title>
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-  <link href="css/font-awesome.min.css" rel="stylesheet" />
-  <link href="css/style.css" rel="stylesheet" />
-  <!-- jQuery e Bootstrap JS -->
-  <script src="js/jquery-3.5.1.min.js"></script>
+  <meta name="description" content="Loja online criada para o treinamento de desenvolvimento com o Alex" />
+  <meta name="author" content="Wenega Wama" />
+  <title>Loja Online</title>
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/bootstrap.css" />
+  <link rel="stylesheet" href="css/font-awesome.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Scripts -->
+ <script src="js/jquery-3.5.1.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
-  <script src="./js/index.js"></script>
-    
+  <script src="js/index.js"></script>
 </head>
 
 <body>
+  <!-- Header -->
   <div class="hero_area fixed">
-    <header class="header_section">
-      <div class="header_top">
-        <div class="container-fluid">
-          <div class="top_nav_container">
-            <a class="navbar-brand d-none d-lg-flex" href="index.html">
-              <img src="images/Preview.png" width="120px" height="120px" />
-            </a>
-            <div class="contact_nav">
-              <table>
-                <tr>
-                  <td align="center"> 
-                    <a href="pages/login.html">
-                      <img src="images/login.png" width="30px" height="30px" />
-                    </a>
-                  </td>
-                  <td align="center"> 
-                    <a href="/pages/carrinho.html">
-                      <img src="images/cart.png" width="20px" height="20px" class="cart-icon" />
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td align="center" font="10px">Login</td>
-                  <td align="center" font="10px">Carrinho</td>
-                </tr>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="header_bottom">
-        <div class="container-fluid">
-          <nav class="navbar navbar-expand-lg custom_nav-container ">
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <header class="header_section ">
+      <div class="header_top  py-2" style="background-color: rgba(63, 97, 190, 0.133);">
+        <nav class="navbar navbar-expand-lg  " >
+          <a class="navbar-brand" href="#">
+              <img src="/images/logowenshop.png" alt="Logo" style="width: 100px;"> <!-- Substitua "logo.png" pelo caminho do seu logo -->
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <div class="collapse navbar-collapse" id="navbarNav">
+              <form class="form-inline mx-auto">
+                  <input class="form-control mr-sm-2" type="search" id="searchInput" placeholder="🔍 Pesquisar produtos..."
+                  aria-label="Pesquisar produtos">
+                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+              </form>
+              
               <ul class="navbar-nav">
-                <li class="nav-item active">
-                  <a class="nav-link pl-lg-0" href="index.html">Principal <span class="sr-only">(current)</span></a>
-                </li>
-
-                <li class="nav-item dropdown">
-                  <a class="nav-link " href="pages/cadastro.html"> Cadastre-se</a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="pages/cadastroVendedor.html">Como vendedor</a></li>
-                    <li><a class="dropdown-item" href="pages/cadastroUser.html">Como cliente</a></li>
-
-                  </ul>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="./pages/contact.html"></a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link" href="./pages/service.html"></a>
-                </li>
+                  <li class="nav-item">
+                      <a class="nav-link mx-4" href="#">
+                          <img src="/images/login.png" alt="Login" style="width: 30px;"> <!-- Substitua "login-icon.png" pelo caminho do ícone de login -->
+                          <small>Cadastre-se</small>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link mx-4" href="#">
+                          <img src="/images/login.png" alt="Cadastro" style="width: 30px;"> <!-- Substitua "register-icon.png" pelo caminho do ícone de cadastro -->
+                          <small> Login</small>
+                      </a>
+                  </li>
+                  <li class="nav-item mx-4">
+                      <a class="nav-link" href="/pages/carrinho.html">
+                          <img src="/images/cart.png" alt="Carrinho" style="width: 30px;"> <!-- Substitua "cart-icon.png" pelo caminho do ícone do carrinho -->
+                      </a>
+                  </li>
               </ul>
-
-            </div>
-          </nav>
-        </div>
-      </div>
+          </div>
+      </nav>
+ 
     </header>
-    <!-- end header section -->
-    <!-- slider section -->
+    <h2 class="text-center">Frete grátis para todos os produtos.</h2>
 
-
+    <!-- Campo de busca 
     <div class="container mt-5">
-      <div class="input-group mb-3">
-        <input type="text" class="form-control" id="searchInput" placeholder="Pesquisar produtos...">
-      </div>
-       <!-- Lista dos produtos -->
-      <div class="row" id="productList">
-      </div>
-      <!-- Mostrar um produto especifico-->
-       <div class="row" id="singleProduct">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="input-group mb-4">
+            <input type="text" class="form-control" id="searchInput" placeholder="🔍 Pesquisar produtos..."
+              aria-label="Pesquisar produtos">
+            <div class="input-group-append">
+              <button class="btn btn-outline-primary" type="button" id="searchButton">Buscar</button>
+            </div>
+          </div>
+        </div>
+      </div>-->
 
-       </div>
+      <!-- Lista de produtos -->
+      <div class="row" id="productList"></div>
+
+      <!-- Produto específico -->
+      <div class="row" id="singleProduct"></div>
     </div>
+  </div>
 
-    <!-- footer section -->
-    <footer class="footer_section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 col-lg-3 footer-col">
-            <div class="footer_detail">
-              <h4>
-                Sobre
-              </h4>
-              <p>
-                Melhor lugar para comprar e vender roupas
-              </p>
-              <div class="footer_social">
-                <a href="">
-                  <i class="fa fa-facebook" aria-hidden="true"></i>
-                </a>
-                <a href="">
-                  <i class="fa fa-twitter" aria-hidden="true"></i>
-                </a>
-                <a href="">
-                  <i class="fa fa-linkedin" aria-hidden="true"></i>
-                </a>
-                <a href="">
-                  <i class="fa fa-instagram" aria-hidden="true"></i>
-                </a>
-              </div>
-            </div>
+  <!-- Footer -->
+  <footer class="footer_section bg-dark text-white mt-5 pt-4 pb-3">
+    <div class="container">
+      <div class="row text-center text-md-left">
+        <div class="col-md-4 mb-4">
+          <h5>Sobre</h5>
+          <p>Melhor lugar para comprar e vender roupas.</p>
+          <div class="footer_social">
+            <a href="#"><i class="fa fa-facebook text-white mr-2"></i></a>
+            <a href="#"><i class="fa fa-twitter text-white mr-2"></i></a>
+            <a href="#"><i class="fa fa-linkedin text-white mr-2"></i></a>
+            <a href="#"><i class="fa fa-instagram text-white"></i></a>
           </div>
-          <div class="col-md-6 col-lg-2 mx-auto footer-col">
-            <div class="footer_link_box">
-              <h4>
-                Links
-              </h4>
-              <div class="footer_links">
-                <a class="active" href="index.html">
-                  Home
-                </a>
-                <a class="" href="service.html">
-                  Serviços
-                </a>
-                <a class="" href="about.html">
-                  Sobre
-                </a>
-                <a class="" href="why.html">
-                  Por que nos escolher
-                </a>
-                <a class="" href="contact.html">
-                  Contatos
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 footer-col">
-            <div class="footer_contact">
-              <h4>
-                Nossos contatos
-              </h4>
-              <div class="contact_link_box">
-                <p>
-                  <i class="fa fa-map-marker" aria-hidden="true"></i>
-                  <span>
-                    Rua wenshop, 123 -Centro -Curitiba - Cep 33333333
-                  </span>
-                </p>
-                <a href="">
-                  <i class="fa fa-phone" aria-hidden="true"></i>
-                  <span>
-                    Call +41 111111111
-                  </span>
-                </a>
-                <a href="">
-                  <i class="fa fa-envelope" aria-hidden="true"></i>
-                  <span>
-                    wenshop@gmail.com
-                  </span>
-                </a>
-                <p>
-                  <i class="fa fa-clock-o" aria-hidden="true"></i>
-                  <span>
-                    Seg-Sab: 09.00 - 18.00
-                  </span>
-                </p>
-                <p>
-                  <i class="fa fa-clock-o" aria-hidden="true"></i>
-                  <span>
-                    Sunday: Fechado
-                  </span>
-                </p>
-              </div>
-            </div>
-          </div>
+        </div>
 
+        <div class="col-md-4 mb-4">
+          <h5>Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="index.html" class="text-white">Home</a></li>
+            <li><a href="service.html" class="text-white">Serviços</a></li>
+            <li><a href="about.html" class="text-white">Sobre</a></li>
+            <li><a href="why.html" class="text-white">Por que nos escolher</a></li>
+            <li><a href="contact.html" class="text-white">Contatos</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <h5>Contato</h5>
+          <p><i class="fa fa-map-marker"></i> Rua Wenshop, 123 - Centro - Curitiba</p>
+          <p><i class="fa fa-phone"></i> +41 111111111</p>
+          <p><i class="fa fa-envelope"></i> wenshop@gmail.com</p>
+          <p><i class="fa fa-clock-o"></i> Seg-Sáb: 09:00 - 18:00</p>
+          <p><i class="fa fa-clock-o"></i> Domingo: Fechado</p>
         </div>
       </div>
-      <div class="footer-info">
-        <div class="container">
-          <p>
-            &copy; <span id="displayYear"></span> Direitos reservados
-            <a href="https://html.design/">WenShop</a>
-          </p>
-        </div>
-      </div>
-    </footer>
-    <!-- footer section -->
+    </div>
+    <div class="footer-info text-center mt-3">
+      <p>&copy; <span id="displayYear"></span> Direitos reservados - <a href="#" class="text-white">WenShop</a></p>
+    </div>
+  </footer>
 </body>
 
 </html>

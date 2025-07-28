@@ -102,13 +102,13 @@ a:focus {
           flex-direction: column;
 }
 .estilo {
-  background-color: #1e758d;
+  background-color: #1faed6;
 }
 
 
 
 .header_section {
-  background-color: white;
+  background-color: rgb(196, 23, 23);
  
 }
 
@@ -946,7 +946,7 @@ hr {
   color: red;
 }
 .cart-icon {
-  margin-left: 10px; /* Ajuste o valor conforme necessário */
+  margin-left: 10px;
 }
 .img-deletar {
   float: inline-end;
@@ -956,4 +956,10 @@ hr {
 .product-card {
   margin: 5px;
 }
-  
+.product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.product-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}

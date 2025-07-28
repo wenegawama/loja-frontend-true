@@ -30,7 +30,12 @@
     </header>
     <div class="container mt-2">
       <h2 class="row justify-content-center">Cadastrar produto</h2>
-      <form id="produtoForm" method="POST">
+      <form id="produtoForm" method="POST" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label for="foto" class="form-label">Foto</label>
+          <input type="file"  class="form-control " id="foto"  aria-describedby="Foto do produto"
+            placeholder="Foto do produto"/> 
+        </div>
         <div class="mb-3">
           <label for="nome" class="form-label">Nome</label>
           <input type="nome" class="form-control required" id="nome"  aria-describedby="Nome do produto"
