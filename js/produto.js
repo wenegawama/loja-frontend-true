@@ -1,12 +1,14 @@
 function getProductIdFromUrl() {
   const params = new URLSearchParams(window.location.search);
+  console.log(params)
   return params.get("id");
 }
 
 async function fetchSingleProduct(id) {
-  const urlBase = `http://NPRCURJBE02PYDW.REDECORP.BR:8080/api/v1/users/sellers/produtos/buscar?id=${id}`;
+  const urlBase = `http://NPRCURJBE02PYDW.REDECORP.BR:8080/api/v1/users/sellers/products/${id}`;
   const response = await fetch(urlBase);
   const product = await response.json();
+  console.log(product)
 
   try {
     document.getElementById("name").textContent = product.name;

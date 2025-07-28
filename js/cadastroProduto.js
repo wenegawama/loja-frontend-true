@@ -13,6 +13,8 @@ document.getElementById('produtoForm').addEventListener('submit', function(event
     const tamanho = tamanhoSelecionado.options[tamanhoSelecionado.selectedIndex].innerText
     const categoriaSelecionada = document.getElementById('categoria')
     const categoria = categoriaSelecionada.options[categoriaSelecionada.selectedIndex].innerText
+    const fotoInput = document.getElementById('foto')
+    const foto = fotoInput.files[0]
 
     document.getElementById('tamanho').addEventListener('change', function() {
         const tamanhoSelecionado = document.getElementById('tamanho')
@@ -24,7 +26,6 @@ document.getElementById('produtoForm').addEventListener('submit', function(event
         const categoria = categoriaSelecionada.options[categoriaSelecionada.selected].innerText;
         console.log('Categoria selecionada: ', categoria);
     })
-    
 
     const successToast = new bootstrap.Toast(document.getElementById('successToast'))
 
@@ -32,26 +33,20 @@ document.getElementById('produtoForm').addEventListener('submit', function(event
     const user = JSON.parse(sessionStorage.getItem('user'))
     console.log(user)
 
-    const dadosProdutos = {
-        name: nome,
-        description: descricao,
-        category: categoria,
-        price: precoDouble,
-        color: cor,
-        quantity: quantidade,
-        tamanho: tamanho,
-        foto: null,
-        id_user: user.user.id
-    }
-    console.log(dadosProdutos);
+    const formData = new FormData();
+    formData.append('name', nome);
+    formData.append('description', descricao);
+    formData.append('category', categoria);
+    formData.append('price', precoDouble);
+    formData.append('color', cor);
+    formData.append('quantity', quantidade);
+    formData.append('tamanho', tamanho);
+    formData.append('foto', foto);
+    formData.append('id_user', user.user.id);
 
-
-    fetch('http://NPRCURJBE02PYDW.REDECORP.BR:8080/api/v1/users/sellers/product', {   
+    fetch('http://localhost:8080/api/v1/users/sellers/products', {   
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(dadosProdutos)
+        body: formData
     })
     .then(response => response.json())
     .then(response => {
